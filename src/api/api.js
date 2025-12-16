@@ -4,7 +4,6 @@ const BASE_URL = "https://api.themoviedb.org/3";
 /* we recived a so called "Bearer Token" intead of a simple API-key, so since its a Bearer Token it
 is not supposed to be in the URL, instead it sends as a Header with the fetch */
 
-
 const options = {
   method: 'GET',
   headers: {

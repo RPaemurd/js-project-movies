@@ -1,0 +1,51 @@
+import styled from "styled-components";
+
+import ButtonIcon from "../assets/buttonicon.svg";
+
+const ButtonStyled = styled.a`
+  background-color: #000000;
+  position: absolute;
+  display: inline-flex;
+  color: #fff;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  cursor: pointer;
+
+  &:hover {
+    font-size: 18px;
+    gap: 8px;
+    background-color: #000000;
+  }
+`;
+
+const ButtonText = styled.p`
+  background-color: black;
+  color: #fff;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  cursor: pointer;
+`;
+
+const BackButton = () => {
+  return (
+    <ButtonStyled
+      href="/"
+      type="link"
+      name="return to main"
+      className="backLink"
+    >
+      <img src={ButtonIcon} alt="icon arrow back" aria-hidden="true" />
+      <ButtonText>Movies</ButtonText>
+    </ButtonStyled>
+  );
+};
+
+export default BackButton;

@@ -1,33 +1,24 @@
-/* import { useEffect } from 'react';
-import { getPopularMovies } from '../api/api';
-
-function Home() {
-
-  useEffect(() => {
-    console.log("trying to fetch..."); 
-    
-    //just did a simple check to see if the data comes through
-    getPopularMovies()
-      .then(data => console.log("data from the api", data))
-      .catch(err => console.error("error", err));
-  }, []);
-};
-
-export default Home */
-
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { getPopularMovies } from '../api/api';
-import MovieInfo from '../components/MovieInfo';
+import MovieInfo from '../components/MovieInfo'; 
 
 const HomeContainer = styled.div`
-  width: 100vw;
+  width: 100%; 
 `;
 
 const Grid = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  position: relative;
+  flex-direction: column; 
+  align-items: center;    
+
+  
+  @media (min-width: 768px) {
+    flex-direction: row;  
+    flex-wrap: wrap;     
+    justify-content: center; 
+    align-items: flex-start; 
+  }
 `;
 
 function Home() {
@@ -41,15 +32,15 @@ function Home() {
 
   return (
     <HomeContainer>
-      
       <Grid>
-        {movies.map((movie) => (
+        {movies.map((movie, index) => (
           <MovieInfo 
             key={movie.id} 
             id={movie.id}
             title={movie.title} 
             poster_path={movie.poster_path} 
             release_date={movie.release_date}
+            index={index}
           />
         ))}
       </Grid>
@@ -57,4 +48,4 @@ function Home() {
   );
 }
 
-export default Home
+export default Home;

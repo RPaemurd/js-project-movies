@@ -8,14 +8,6 @@ import { getMovieDetails } from "../api/api";
 import BackButton from "../components/BackButton";
 import MovieCard from "../components/MovieCard";
 
-/* const PageWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 124px;
-  background-color: red;
-  padding: 16px auto 42px;
-`; */
-
 /* const MovieDetail = () => {
   const [caca, setCaca] = useState({});
 
@@ -40,23 +32,25 @@ import MovieCard from "../components/MovieCard";
 export default MovieDetail; */
 
 const PageWrapper = styled.div`
+  background-image: url(${});
+  background-color: red;
+  background-size: contain;
+  background-size: cover;
   box-sizing: border-box;
-  margin: 0;
-  padding: 42px auto 64px;
+  padding: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  background-size: cover;
+  align-items: flex-start;
+
   min-height: 100vh;
-  width: 100vw;
 `;
 
 const MovieDetail = () => {
   const params = useParams();
   console.log(params);
 
-  const [movieData, setMovieData] = useState({});
+  const [movieData, setMovieData] = useState();
 
   useEffect(() => {
     const movieLoad = async () => {
@@ -70,7 +64,7 @@ const MovieDetail = () => {
   return (
     <PageWrapper>
       <BackButton />
-      <MovieCard details={movieData} />
+      {movieData ? <MovieCard details={movieData} /> : <p>Loading!!</p>}
     </PageWrapper>
   );
 };

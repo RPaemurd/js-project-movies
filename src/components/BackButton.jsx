@@ -3,8 +3,7 @@ import styled from "styled-components";
 import ButtonIcon from "../assets/buttonicon.svg";
 
 const ButtonStyled = styled.a`
-  background-color: #000000;
-  position: absolute;
+  margin: 12px 0 0 24px;
   display: inline-flex;
   color: #fff;
   align-items: center;
@@ -18,12 +17,10 @@ const ButtonStyled = styled.a`
   &:hover {
     font-size: 18px;
     gap: 8px;
-    background-color: #000000;
   }
 `;
 
 const ButtonText = styled.p`
-  background-color: black;
   color: #fff;
   align-items: center;
   font-weight: 700;

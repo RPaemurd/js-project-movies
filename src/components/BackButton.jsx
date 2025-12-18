@@ -17,6 +17,7 @@ const ButtonStyled = styled.a`
   &:hover {
     font-size: 18px;
     gap: 8px;
+    transform: scale(1.5);
   }
 `;
 

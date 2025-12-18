@@ -8,32 +8,12 @@ import { getMovieDetails } from "../api/api";
 import BackButton from "../components/BackButton";
 import MovieCard from "../components/MovieCard";
 
-/* const MovieDetail = () => {
-  const [caca, setCaca] = useState({});
-
-  useEffect(() => {
-    async function stupid() {
-      const data = await getMovieDetails("1218925");
-
-      setCaca(data);
-    }
-    stupid();
-  }, []);
-
-  return (
-    <PageWrapper>
-      <BackButton />
-      <h1>El motosierro is as good as {caca.vote_average}</h1>
-      <pre>Hello, this is {JSON.stringify(caca, null, 2)}</pre>
-    </PageWrapper>
-  );
-};
-
-export default MovieDetail; */
-
 const PageWrapper = styled.div`
-  background-image: url(${});
-  background-color: red;
+  background-image: url(${(props) =>
+    "https://media.themoviedb.org/t/p/w300_and_h450_face" +
+    props.$poster_path});
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: darken;
   background-size: contain;
   background-size: cover;
   box-sizing: border-box;
@@ -44,6 +24,11 @@ const PageWrapper = styled.div`
   align-items: flex-start;
 
   min-height: 100vh;
+
+  @media (max-width: 768px) {
+    justify-content: flex-end;
+    background-size: cover;
+  }
 `;
 
 const MovieDetail = () => {
@@ -62,7 +47,7 @@ const MovieDetail = () => {
   }, [params.id]);
 
   return (
-    <PageWrapper>
+    <PageWrapper $poster_path={movieData?.poster_path}>
       <BackButton />
       {movieData ? <MovieCard details={movieData} /> : <p>Loading!!</p>}
     </PageWrapper>

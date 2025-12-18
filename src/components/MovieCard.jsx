@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import MovieTitle from "./MovieTitle";
-import MovieInfo from "./MovieInfo";
 
 const CardWrapper = styled.div`
   box-sizing: border-box;
@@ -11,11 +9,29 @@ const CardWrapper = styled.div`
   padding: 50px;
   margin: 0;
   max-height: 100vh;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `;
 
 const ImageStyled = styled.img`
   max-width: 30vw;
   max-height: 70vh;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    max-height: auto;
+  }
+`;
+
+const HeadingStyled = styled.div`
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 const InfoWrapper = styled.div`
@@ -27,18 +43,24 @@ const InfoWrapper = styled.div`
   max-width: 50vw;
   margin: 0;
   padding: 0;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 const GenreWrapper = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;
+  color: #fff;
 `;
 
 const TitleWrapper = styled.h1`
   padding: 0;
   margin: 0;
   font-size: 1.5rem;
+  color: #fff;
 `;
 
 const RatingWrapper = styled.span`
@@ -54,7 +76,7 @@ const TextWrapper = styled.p`
   padding: 4px 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  color: #000;
+  color: #fff;
 `;
 
 const MovieCardInside = ({ details }) => {
@@ -74,12 +96,12 @@ const MovieCardInside = ({ details }) => {
     <CardWrapper>
       <ImageStyled src={path}></ImageStyled>
       <InfoWrapper>
-        <div>
+        <HeadingStyled>
           <TitleWrapper>
             <span>{details.title}</span>
             <RatingWrapper>⭐️ {details.vote_average}</RatingWrapper>
           </TitleWrapper>
-        </div>
+        </HeadingStyled>
         <GenreWrapper>{genres}</GenreWrapper>
         <TextWrapper>
           <span style={{ margin: "0", padding: "4px 4px 4px 0" }}>

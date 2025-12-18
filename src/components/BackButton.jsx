@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import ButtonIcon from "../assets/buttonicon.svg";
+import ButtonIcon from "../assets/Buttonicon.svg";
 
 const ButtonStyled = styled.a`
   margin: 12px 0 0 24px;

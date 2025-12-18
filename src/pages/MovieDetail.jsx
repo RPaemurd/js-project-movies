@@ -9,13 +9,12 @@ import BackButton from "../components/BackButton";
 import MovieCard from "../components/MovieCard";
 
 const PageWrapper = styled.div`
-  background-image: url(${(props) =>
-    "https://media.themoviedb.org/t/p/w300_and_h450_face" +
-    props.$poster_path});
-  background-color: rgba(0, 0, 0, 0.7);
+  background-image: ${(props) =>
+    `linear-gradient(rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0) 100%), url(https://media.themoviedb.org/t/p/w300_and_h450_face${props.$backdrop_path})`};
+  /* background-color: rgba(0, 0, 0, 0.7); */
   background-blend-mode: darken;
-  background-size: contain;
   background-size: cover;
+  background-repeat: no-repeat;
   box-sizing: border-box;
   padding: auto;
   display: flex;
@@ -47,7 +46,7 @@ const MovieDetail = () => {
   }, [params.id]);
 
   return (
-    <PageWrapper $poster_path={movieData?.poster_path}>
+    <PageWrapper $backdrop_path={movieData?.backdrop_path}>
       <BackButton />
       {movieData ? <MovieCard details={movieData} /> : <p>Loading!!</p>}
     </PageWrapper>

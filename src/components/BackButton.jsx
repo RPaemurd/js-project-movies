@@ -3,7 +3,7 @@ import styled from "styled-components";
 import ButtonIcon from "../assets/ButtonIcon.svg";
 
 const ButtonStyled = styled.a`
-  margin: 12px 0 0 24px;
+  margin: 0 0 0 20px;
   display: inline-flex;
   color: #fff;
   align-items: center;
@@ -17,7 +17,7 @@ const ButtonStyled = styled.a`
   &:hover {
     font-size: 18px;
     gap: 8px;
-    transform: scale(1.5);
+    transform: scale(1.1);
   }
 `;
 

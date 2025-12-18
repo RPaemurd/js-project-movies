@@ -1,14 +1,15 @@
-import Home from './pages/Home'
-import { Routes, Route } from 'react-router-dom';
+import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
+import MovieDetail from "./pages/MovieDetail";
+import BackButton from "./components/BackButton";
 
 export const App = () => {
   return (
-    <>
-      <Home />
-    </>
-    /* <Routes>  
-      <Route path="/" element={<Home />}/> 
-      <Route path="/movie/:id" element={<MovieDetail />} /> 
-     </Routes> */
-  )
+    <main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movie/:id" element={<MovieDetail />} />
+      </Routes>
+    </main>
+  );
 };

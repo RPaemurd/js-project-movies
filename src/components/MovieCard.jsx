@@ -119,10 +119,10 @@ const MovieCardInside = ({ details }) => {
         </HeadingStyled>
         <GenreWrapper>{genres}</GenreWrapper>
         <TextWrapper>
-          <span style={{ margin: "0", padding: "4px 4px 4px 0" }}>
+          {/* <span style={{ margin: "0", padding: "4px 4px 4px 0" }}>
             <b>IMDB ID: </b>
-          </span>
-          {details.imdb_id}
+          </span> */}
+          {/* {details.imdb_id} */}
         </TextWrapper>
         {/* <MovieTitle title={title} /> */}
 
